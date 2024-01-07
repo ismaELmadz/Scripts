@@ -57,11 +57,11 @@ check(){
   local reset_color="\e[1;34m"    # Reset to default terminal color
   local padding="  "            # Padding for aesthetic
   
-  # Header                                         𝕚𝕤𝕞𝕒𝔼𝕃
+  # Header                                         
   echo -e "${border_color}┌────────────────────────────────────────────────┐${reset_color}"
   echo -e "${border_color}│${header_color}${padding}DNS Status Check Results${padding}${reset_color}"
   echo -e "${border_color}├────────────────────────────────────────────────┤${reset_color}"
-                                                   𝕚𝕤𝕞𝕒𝔼𝕃
+                                                   
   # Results
   for T in "${DNS_IPS[@]}"; do
     for R in "${NAME_SERVERS[@]}"; do
@@ -77,12 +77,12 @@ check(){
     done
   done
 
-  # Check count and Loop Delay                    𝐢𝐬𝐦𝐚𝐄𝐋 𝐌𝐚𝐝𝐫𝐢𝐠𝐚𝐋
+  # Check count and Loop Delay                    
   echo -e "${border_color}├────────────────────────────────────────────────┤${reset_color}"
   echo -e "${border_color}│${padding}${header_color}Check count: ${count}${padding}${reset_color}"
   echo -e "${border_color}│${padding}Loop Delay: ${LOOP_DELAY} seconds${padding}${reset_color}"
            
-                                                  𝐢𝐬𝐦𝐚𝐄𝐋 𝐌𝐚𝐝𝐫𝐢𝐠𝐚𝐋
+                                                 
   echo -e "${border_color}└────────────────────────────────────────────────┘${reset_color}"
 }
 
