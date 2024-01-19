@@ -8,10 +8,10 @@ function endscript() {
 
 trap endscript 2 15
 
-echo -e "\e[1;37mEnter DNS IPs separated by ' ': \e[0m"
+echo -e "\e[1;37mEnter DNS IPs separated by ' ': \e[1;34m"
 read -a DNS_IPS
 
-echo -e "\e[1;37mEnter Your NameServers separated by ' ': \e[0m"
+echo -e "\e[1;37mEnter Your NameServers separated by ' ': \e[1;34m"
 read -a NAME_SERVERS
 
 LOOP_DELAY=5
@@ -56,12 +56,12 @@ check(){
   local header_color="\e[1;33m"  # Light cyan color
   local reset_color="\e[1;34m"    # Reset to default terminal color
   local padding="  "            # Padding for aesthetic
-  
-  # Header                                         
+
+  # Header
   echo -e "${border_color}┌────────────────────────────────────────────────┐${reset_color}"
   echo -e "${border_color}│${header_color}${padding}DNS Status Check Results${padding}${reset_color}"
   echo -e "${border_color}├────────────────────────────────────────────────┤${reset_color}"
-                                                   
+  
   # Results
   for T in "${DNS_IPS[@]}"; do
     for R in "${NAME_SERVERS[@]}"; do
@@ -77,12 +77,12 @@ check(){
     done
   done
 
-  # Check count and Loop Delay                    
+  # Check count and Loop Delay
   echo -e "${border_color}├────────────────────────────────────────────────┤${reset_color}"
   echo -e "${border_color}│${padding}${header_color}Check count: ${count}${padding}${reset_color}"
   echo -e "${border_color}│${padding}Loop Delay: ${LOOP_DELAY} seconds${padding}${reset_color}"
-           
-                                                 
+  
+  # Footer
   echo -e "${border_color}└────────────────────────────────────────────────┘${reset_color}"
 }
 
@@ -98,7 +98,8 @@ echo "██╗███████╗███╗   ███╗ ████�
 ██║███████╗██╔████╔██║███████║█████╗  ██║     
 ██║╚════██║██║╚██╔╝██║██╔══██║██╔══╝  ██║     
 ██║███████║██║ ╚═╝ ██║██║  ██║███████╗███████╗
-╚═╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝"
+╚═╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+                                              "
 echo""
 countdown
   clear
